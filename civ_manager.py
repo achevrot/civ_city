@@ -18,7 +18,15 @@ class CivManager() :
             
     def add_new_city(self, city: City):
         self.cities[city.id - 1] = city
-        
+    
+    def get_total_population(self):
+        total_pop = 0
+        for city in self.cities:
+            if isinstance(city, City):
+                total_pop += city.population
+        return total_pop
+    
+            
     def get_capital(self):
         return self.cities[0]
         
@@ -35,27 +43,10 @@ if __name__ == "__main__":
     # Create a city
     CM = CivManager()
 
-    # Add tiles to the city
-    
-    CM.get_capital().add_tile(tile1)
-    CM.get_capital().add_tile(tile1)
-    CM.get_capital().add_tile(tile2)
-    CM.get_capital().add_tile(tile2)
-    CM.get_capital().add_tile(tile3)
-    CM.get_capital().add_tile(tile3)
-    CM.get_capital().add_tile(tile3)
-    CM.get_capital().add_tile(tile3)
-    CM.get_capital().add_tile(tile3)
-    CM.get_capital().add_tile(tile3)
-    CM.get_capital().add_tile(tile3)
-    CM.get_capital().add_tile(tile3)
-    CM.get_capital().add_tile(tile3)
-    CM.get_capital().add_tile(tile3)
-
     i = 1
-    while(True):
+    while(i <= 30):
         print(f"Turn {i}:")
         CM.pass_turn()
-        print(CM.cities)
         input()
         i += 1
+    print(CM.get_total_population())

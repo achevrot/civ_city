@@ -27,7 +27,6 @@ class Settler():
         self.settled = False
         
     def next_turn(self):
-        print(self.turn_left_to_settle)
         self.turn_left_to_settle -= 1
         try: 
             self.settle() 
