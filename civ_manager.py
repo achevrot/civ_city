@@ -45,6 +45,9 @@ if __name__ == "__main__":
     CM.get_capital().add_tile(tile1)
     CM.get_capital().add_tile(tile1)
 
-    for i in range(30):
-        print(f"Turn {i+1}:")
+    i = 1
+    while(True):
+        print(f"Turn {i}:")
         CM.pass_turn()
+        input()
+        i += 1
